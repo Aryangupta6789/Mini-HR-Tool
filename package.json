@@ -4,7 +4,7 @@
     "description": "MERN stack HR management system",
     "main": "api/index.js",
     "scripts": {
-        "start": "node backend/server.js"
+        "start": "node api/index.js"
     },
     "dependencies": {
         "express": "^4.21.2",
