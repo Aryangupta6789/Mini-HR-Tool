@@ -11,49 +11,42 @@ import AttendanceLogs from './pages/AttendanceLogs';
 import EmployeeManagement from './pages/EmployeeManagement';
 import MonthlyReports from './pages/MonthlyReports';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { LoadingProvider } from './context/LoadingContext';
 
-import LeaveHistory from './pages/LeaveHistory';
-import MarkAttendance from './pages/MarkAttendance';
-import ApplyLeave from './pages/ApplyLeave';
-import AttendanceHistory from './pages/AttendanceHistory';
-
-const HomeRedirect = () => {
-    const { user } = useAuth();
-    if (!user) return <Navigate to="/login" />;
-    return user.role === 'admin' ? <Navigate to="/admin-dashboard" /> : <Navigate to="/employee-dashboard" />;
-};
+// ... other imports
 
 function App() {
   return (
     <ThemeProvider>
-        <AuthProvider>
-            <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                
-                <Route path="/" element={<HomeRedirect />} />
+        <LoadingProvider>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    
+                    <Route path="/" element={<HomeRedirect />} />
 
-                {/* Employee Routes */}
-                <Route element={<PrivateRoute allowedRoles={['employee']} />}>
-                    <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
-                    <Route path="/employee/leaves" element={<LeaveHistory />} />
-                    <Route path="/employee/attendance" element={<MarkAttendance />} />
-                    <Route path="/employee/attendance-history" element={<AttendanceHistory />} />
-                    <Route path="/employee/leaves/apply" element={<ApplyLeave />} />
-                </Route>
+                    {/* Employee Routes */}
+                    <Route element={<PrivateRoute allowedRoles={['employee']} />}>
+                        <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+                        <Route path="/employee/leaves" element={<LeaveHistory />} />
+                        <Route path="/employee/attendance" element={<MarkAttendance />} />
+                        <Route path="/employee/attendance-history" element={<AttendanceHistory />} />
+                        <Route path="/employee/leaves/apply" element={<ApplyLeave />} />
+                    </Route>
 
-                {/* Admin Routes */}
-                <Route element={<PrivateRoute allowedRoles={['admin']} />}>
-                    <Route path="/admin-dashboard" element={<AdminDashboard />} />
-                    <Route path="/admin/leave-requests" element={<LeaveRequests />} />
-                    <Route path="/admin/attendance-logs" element={<AttendanceLogs />} />
-                    <Route path="/admin/employees" element={<EmployeeManagement />} />
-                    <Route path="/admin/reports" element={<MonthlyReports />} />
-                </Route>
-            </Routes>
-            <ToastContainer />
-        </AuthProvider>
+                    {/* Admin Routes */}
+                    <Route element={<PrivateRoute allowedRoles={['admin']} />}>
+                        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+                        <Route path="/admin/leave-requests" element={<LeaveRequests />} />
+                        <Route path="/admin/attendance-logs" element={<AttendanceLogs />} />
+                        <Route path="/admin/employees" element={<EmployeeManagement />} />
+                        <Route path="/admin/reports" element={<MonthlyReports />} />
+                    </Route>
+                </Routes>
+                <ToastContainer />
+            </AuthProvider>
+        </LoadingProvider>
     </ThemeProvider>
   );
 }
