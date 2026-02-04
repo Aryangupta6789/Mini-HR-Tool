@@ -162,6 +162,4 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 
 ---
 
-<p align="center">
-  Built with ❤️ by Aryan Gupta
-</p>
+
