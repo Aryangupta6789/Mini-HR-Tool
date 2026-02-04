@@ -149,12 +149,12 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 | :--- | :--- | :--- |
 | **System Architecture** | Manual | Designed the MVC folder structure, API routing, and Database Relational Schema. |
 | **Auth & Security** | Manual | Implemented JWT validation, Password Hashing (Bcrypt), and Role-Based Access Control logic. |
-| **Complex Aggregations** | ChatGPT | Generated optimized MongoDB aggregation pipelines for Monthly Reports generation. |
+| **Service Layer (Frontend)** | Copilot | Generated robust Axios interceptors (`api.js`) and report handling services. |
 | **UI Components** | Claude | Assisted in creating responsive, accessible Tailwind CSS components. |
+| **Documentation** | ChatGPT | Structured the professional README layout and technical project documentation. |
 | **Deployment Config** | Manual | Configured Vercel serverless functions, environment variables, and CORS policies. |
-| **Email Integration** | Copilot | Suggested optimal Nodemailer transport settings for reliable delivery. |
 
-> **Statement of Originality:** AI tools were strictly used for syntax generation and optimizing specific algorithms. All business rules, validation logic, and system integration were implemented and verified manually.
+> **Statement of Originality:** AI tools were strictly used for boilerplate generation (like service files) and documentation formatting. All business rules, validation logic, and system integration were implemented and verified manually.
 
 ### ⚠️ Known Limitations
 - **Free Tier Hosting:** Server may take a few seconds to "wake up" on first request.
