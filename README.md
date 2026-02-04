@@ -156,9 +156,10 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 
 > **Statement of Originality:** AI tools were strictly used for boilerplate generation (like service files) and documentation formatting. All business rules, validation logic, and system integration were implemented and verified manually.
 
-### 🔮 Future Roadmap & Enhancements
-- **Data Visualization:** Current reporting relies on CSV exports. Future updates will introduce interactive charting libraries (e.g., Recharts) for real-time analytics dashboards.
-- **Real-Time Updates:** Notifications are currently delivered via Email. WebSocket integration (Socket.io) is planned to enable instant in-app alerts without page refreshes.
+### ⚠️ Technical Limitations
+- **No Caching Layer:** The system connects directly to MongoDB for all requests without Redis/Memcached. While this ensures real-time consistency, it results in higher latency for frequent read operations (like Dashboard stats).
+- **Synchronous Reporting:** Monthly report generation happens on the main thread. For very large datasets (>10k records), this could lead to timeouts without a background job queue.
+- **Static RBAC:** Role definitions (Admin/Employee) are hardcoded. The system does not currently support dynamic permission creation or granular access levels (e.g., "HR Manager").
 
 ---
 
