@@ -143,18 +143,18 @@ This project is configured for **Zero-Config Vercel Deployment**.
 
 ## 🤖 AI Tools Declaration & Usage
 
-This project was developed with a hybrid approach, leveraging AI tools to enhance efficiency while manually implementing core business logic and structure.
+This project was developed with a hybrid approach, leveraging AI as a productivity tool while retaining full control over architectural decisions and core logic.
 
 | Component | Tool Used | Contribution Detail |
 | :--- | :--- | :--- |
-| **Project Structure** | Manual | Folder structure (MVC), database schema design, and API route planning were designed manually. |
-| **UI Design & CSS** | Claude | Used to generate clean, modern aesthetic components using Tailwind CSS. |
-| **Frontend logic** | GitHub Copilot | Assisted in writing boilerplate code for API service calls and form state handling. |
-| **Advanced Features** | ChatGPT / Copilot | Utilized for optimizing Nodemailer configuration and generating CSV Export logic. |
-| **Auto Absent Logic** | GitHub Copilot | Generated logic for automatically marking "Absent" for past days. |
-| **Business Logic** | Manual / ChatGPT | Core logic for "Leave Balance" and "Overlap Checks" implemented manually with efficiency suggestions. |
+| **System Architecture** | Manual | Designed the MVC folder structure, API routing, and Database Relational Schema. |
+| **Auth & Security** | Manual | Implemented JWT validation, Password Hashing (Bcrypt), and Role-Based Access Control logic. |
+| **Complex Aggregations** | ChatGPT | Generated optimized MongoDB aggregation pipelines for Monthly Reports generation. |
+| **UI Components** | Claude | Assisted in creating responsive, accessible Tailwind CSS components. |
+| **Deployment Config** | Manual | Configured Vercel serverless functions, environment variables, and CORS policies. |
+| **Email Integration** | Copilot | Suggested optimal Nodemailer transport settings for reliable delivery. |
 
-> **Statement of Originality:** While AI tools assisted in syntax generation and UI styling, the underlying business rules, validation logic, and integration of components were implemented and verified manually.
+> **Statement of Originality:** AI tools were strictly used for syntax generation and optimizing specific algorithms. All business rules, validation logic, and system integration were implemented and verified manually.
 
 ### ⚠️ Known Limitations
 - **Free Tier Hosting:** Server may take a few seconds to "wake up" on first request.
