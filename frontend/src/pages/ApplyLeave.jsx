@@ -47,6 +47,7 @@ const ApplyLeave = () => {
                                 <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">Start Date</label>
                                 <input
                                     type="date"
+                                    min={new Date().toISOString().split('T')[0]}
                                     value={leaveForm.startDate}
                                     onChange={(e) => setLeaveForm({...leaveForm, startDate: e.target.value})}
                                     className="w-full p-2 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md text-sm"
@@ -57,6 +58,7 @@ const ApplyLeave = () => {
                                 <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">End Date</label>
                                 <input
                                     type="date"
+                                    min={leaveForm.startDate || new Date().toISOString().split('T')[0]}
                                     value={leaveForm.endDate}
                                     onChange={(e) => setLeaveForm({...leaveForm, endDate: e.target.value})}
                                     className="w-full p-2 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md text-sm"

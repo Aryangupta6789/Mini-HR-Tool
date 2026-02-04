@@ -22,6 +22,13 @@ const applyLeave = async (req, res) => {
         return res.status(400).json({ message: 'End date must be after start date' });
     }
 
+    // Check if start date is in the past
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Normalize to start of day
+    if (start < today) {
+        return res.status(400).json({ message: 'Cannot apply for leave in the past' });
+    }
+
     // Check user's leave balance
     const user = await User.findById(req.user.id);
 
