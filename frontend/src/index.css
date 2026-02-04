@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* React Calendar Customization */
+/* React Calendar Customization */
+.highlight-present {
+  background-color: #dcfce7 !important;
+  /* green-100 */
+  color: #166534 !important;
+  /* green-800 */
+}
+
+.highlight-absent {
+  background-color: #fee2e2 !important;
+  /* red-100 */
+  color: #991b1b !important;
+  /* red-800 */
+}
+
+.react-calendar {
+  border: none !important;
+  width: 100% !important;
+  font-family: inherit !important;
+  overflow: visible !important;
+  background-color: transparent !important;
+}
+
+.react-calendar__tile {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1;
+  border-radius: 8px !important;
+  transition: all 0.2s;
+  padding: 12px 0 !important;
+}
+
+.react-calendar__tile:hover {
+  background-color: #f3f4f6 !important;
+  /* gray-100 */
+}
+
+/* Dark Mode Calendar Overrides */
+.dark .react-calendar {
+  background-color: transparent !important;
+  color: #e5e7eb !important;
+}
+
+.dark .react-calendar__navigation button {
+  color: #e5e7eb !important;
+}
+
+.dark .react-calendar__navigation button:disabled {
+  background-color: transparent !important;
+  opacity: 0.5;
+}
+
+.dark .react-calendar__navigation button:enabled:hover,
+.dark .react-calendar__navigation button:enabled:focus {
+  background-color: #374151 !important;
+  border-radius: 8px;
+}
+
+.dark .react-calendar__month-view__days__day--weekend {
+  color: #f87171 !important;
+}
+
+.dark .react-calendar__tile:enabled:hover,
+.dark .react-calendar__tile:enabled:focus {
+  background-color: #374151 !important;
+}
+
+/* Ensure marked days also show hover effect by mixing colors or using a border */
+.highlight-present:hover,
+.dark .highlight-present:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+}
+
+.highlight-absent:hover,
+.dark .highlight-absent:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+}
+
+.dark .highlight-present {
+  background-color: #064e3b !important;
+  /* green-900 */
+  color: #d1fae5 !important;
+  /* green-100 */
+}
+
+.dark .highlight-absent {
+  background-color: #7f1d1d !important;
+  /* red-900 */
+  color: #fee2e2 !important;
+  /* red-100 */
+}
