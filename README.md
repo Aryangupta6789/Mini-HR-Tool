@@ -158,8 +158,7 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 
 ### ⚠️ Technical Limitations
 - **No Caching Layer:** The system connects directly to MongoDB for all requests without Redis/Memcached. While this ensures real-time consistency, it results in higher latency for frequent read operations (like Dashboard stats).
-- **Synchronous Reporting:** Monthly report generation happens on the main thread. For very large datasets (>10k records), this could lead to timeouts without a background job queue.
-- **Static RBAC:** Role definitions (Admin/Employee) are hardcoded. The system does not currently support dynamic permission creation or granular access levels (e.g., "HR Manager").
+- **No Real-Time Updates:** Changes such as leave approvals or attendance updates require a manual page refresh to reflect the latest data. Real-time updates using WebSockets are not included in this MVP.
 
 ---
 
