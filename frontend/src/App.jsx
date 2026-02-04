@@ -12,8 +12,18 @@ import EmployeeManagement from './pages/EmployeeManagement';
 import MonthlyReports from './pages/MonthlyReports';
 import { ToastContainer } from 'react-toastify';
 import { LoadingProvider } from './context/LoadingContext';
+import 'react-toastify/dist/ReactToastify.css';
 
-// ... other imports
+import LeaveHistory from './pages/LeaveHistory';
+import MarkAttendance from './pages/MarkAttendance';
+import ApplyLeave from './pages/ApplyLeave';
+import AttendanceHistory from './pages/AttendanceHistory';
+
+const HomeRedirect = () => {
+    const { user } = useAuth();
+    if (!user) return <Navigate to="/login" />;
+    return user.role === 'admin' ? <Navigate to="/admin-dashboard" /> : <Navigate to="/employee-dashboard" />;
+};
 
 function App() {
   return (
