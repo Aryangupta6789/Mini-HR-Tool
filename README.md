@@ -156,9 +156,9 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 
 > **Statement of Originality:** AI tools were strictly used for boilerplate generation (like service files) and documentation formatting. All business rules, validation logic, and system integration were implemented and verified manually.
 
-### ⚠️ Known Limitations
-- **Free Tier Hosting:** Server may take a few seconds to "wake up" on first request.
-- **Email Limits:** Uses Gmail SMTP which has daily sending limits.
+### ⚙️ Optimization & Scalability Considerations
+- **Serverless Architecture:** Utilizes Vercel's "Scale-to-Zero" infrastructure. While highly cost-efficient, this may introduce occasional cold-start latency during idle periods.
+- **SMTP Gateway:** Currently configured with Gmail SMTP for rapid development. The email service layer is decoupled and ready for drop-in replacement with enterprise providers like SendGrid or AWS SES.
 
 ---
 
