@@ -1,0 +1,21 @@
+{
+    "name": "mini-hr-tool",
+    "version": "1.0.0",
+    "description": "MERN stack HR management system",
+    "main": "api/index.js",
+    "scripts": {
+        "start": "node backend/server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2",
+        "mongoose": "^8.9.3",
+        "dotenv": "^16.4.7",
+        "cors": "^2.8.5",
+        "jsonwebtoken": "^9.0.2",
+        "bcrypt": "^5.1.1",
+        "nodemailer": "^6.9.17"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
