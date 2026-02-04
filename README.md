@@ -156,9 +156,9 @@ This project was developed with a hybrid approach, leveraging AI as a productivi
 
 > **Statement of Originality:** AI tools were strictly used for boilerplate generation (like service files) and documentation formatting. All business rules, validation logic, and system integration were implemented and verified manually.
 
-### ⚙️ Optimization & Scalability Considerations
-- **Serverless Architecture:** Utilizes Vercel's "Scale-to-Zero" infrastructure. While highly cost-efficient, this may introduce occasional cold-start latency during idle periods.
-- **SMTP Gateway:** Currently configured with Gmail SMTP for rapid development. The email service layer is decoupled and ready for drop-in replacement with enterprise providers like SendGrid or AWS SES.
+### 🔮 Future Roadmap & Enhancements
+- **Data Visualization:** Current reporting relies on CSV exports. Future updates will introduce interactive charting libraries (e.g., Recharts) for real-time analytics dashboards.
+- **Real-Time Updates:** Notifications are currently delivered via Email. WebSocket integration (Socket.io) is planned to enable instant in-app alerts without page refreshes.
 
 ---
 
