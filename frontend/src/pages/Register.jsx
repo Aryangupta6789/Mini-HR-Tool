@@ -157,13 +157,19 @@ const Register = () => {
                                     </svg>
                                 </div>
                                 <input
-                                    type="date"
+                                    type="text"
                                     name="dateOfJoining"
                                     value={formData.dateOfJoining}
                                     onChange={handleChange}
                                     className="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg text-sm focus:outline-none focus:border-blue-600 dark:focus:border-blue-500 transition-colors placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     placeholder="Date of Joining"
                                     required
+                                    onFocus={(e) => (e.target.type = "date")}
+                                    onBlur={(e) => {
+                                        if (!e.target.value) {
+                                            e.target.type = "text";
+                                        }
+                                    }}
                                 />
                             </div>
                         </div>
